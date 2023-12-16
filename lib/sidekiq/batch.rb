@@ -31,6 +31,10 @@ module Sidekiq
       persist_bid_attr('description', description)
     end
 
+    def status
+      Status.new(@bid)
+    end
+
     def callback_queue=(callback_queue)
       @callback_queue = callback_queue
       persist_bid_attr('callback_queue', callback_queue)
